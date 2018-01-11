@@ -1,0 +1,9 @@
+name: Studio Luz Theme
+type: theme
+description: Studio Luz Site Template
+package: custom
+core: 8.x
+base theme: classy
+libraries:
+  - studioluz/global-css
+  - studioluz/global-js
