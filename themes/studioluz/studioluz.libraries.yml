@@ -1,8 +1,8 @@
 global-css:
   css:
     theme:
-      css/style.css: {}
+      dist/style.css: {}
 
 global-js:
   js:
-    js/main.js: {}
+    dist/main.js: {}

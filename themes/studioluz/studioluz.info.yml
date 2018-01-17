@@ -7,3 +7,8 @@ base theme: classy
 libraries:
   - studioluz/global-css
   - studioluz/global-js
+
+regions:
+  header: 'Header'
+  content: 'Main Content'
+  footer: 'Footer'
