@@ -7,6 +7,7 @@ base theme: classy
 libraries:
   - studioluz/global-css
   - studioluz/global-js
+  - studioluz/bootstrap
 
 regions:
   header: 'Header'
