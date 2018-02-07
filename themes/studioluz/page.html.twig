@@ -1,7 +1,9 @@
 <div class="layout-container">
 
   <header role="banner">
-    {{ page.header }}
+    <div class="container">
+      {{ page.header }}
+    </div>
   </header>
 
   {{ page.primary_menu }}
@@ -12,7 +14,7 @@
   {{ page.highlighted }}
 
   {{ page.help }}
-  {{ kint(page) }}
+  {#{{ kint(page) }}#}
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 

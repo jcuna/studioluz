@@ -1,0 +1,21 @@
+@import "vars";
+
+header {
+  background-color: $black;
+
+  ul.menu {
+    padding: 35px 60px;
+    text-align: right;
+    margin-top: -94px;
+    margin-bottom: 0;
+
+    li.menu-item {
+      margin: 0 16px;
+      display: inline;
+      a {
+        color: $white;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

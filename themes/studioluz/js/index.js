@@ -1,4 +1,4 @@
-import '../css/vars.scss'
+import '../css/header.scss'
 
 class Index {
   constructor() {
