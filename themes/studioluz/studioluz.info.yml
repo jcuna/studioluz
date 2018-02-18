@@ -5,9 +5,10 @@ package: custom
 core: 8.x
 base theme: classy
 libraries:
+  - studioluz/bootstrap
+  - studioluz/fontawesome
   - studioluz/global-css
   - studioluz/global-js
-  - studioluz/bootstrap
 
 regions:
   header: 'Header'

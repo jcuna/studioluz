@@ -1,0 +1,55 @@
+@import "vars";
+
+.group-link {
+  height: 600px;
+
+  .link-title {
+    z-index: 1;
+    top: 400px;
+    font-size: 50px;
+    text-transform: uppercase;
+  }
+
+  .luz-link {
+    & a {
+      font-size: 20px;
+      top: 500px;
+      padding: 6px 40px;
+      border: 2px #ffffff solid;
+      border-radius: 4px;
+      text-transform: uppercase;
+      line-height: 1;
+      &:after {
+        content: "\2192";
+        font-size: 20px;
+        font-weight: 600;
+        margin-left: 8px;
+        position: relative;
+      }
+      &:hover {
+        background-color: $white;
+        color: $black;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.page-title,
+.luz-link a,
+.link-title {
+  color: $white;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+h1 {
+  font-size: 70px;
+}
+
+
+.short-background {
+  height: 150px;
+}

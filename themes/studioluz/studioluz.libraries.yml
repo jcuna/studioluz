@@ -11,10 +11,12 @@ global-js:
 
 bootstrap:
   version: 4.00
-  license:
-    name: MIT
-    url: https://fortawesome.github.io/Font-Awesome/license/
-    gpl-compatible: true
   css:
     theme:
       https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css: { type: external, minified: true }
+
+fontawesome:
+  version: 4.7
+  css:
+    theme:
+      https://use.fontawesome.com/releases/v5.0.6/css/all.css: {type: external, minified: true}

@@ -1,35 +1,56 @@
-$black: #111111;
+@import "focal-point.css";
+$black: #000000;
 $white: #ffffff;
+$font: nice-loking;
+$font2: nice-loking-2;
+$font3: nice-loking-3;
+$font4: nice-loking-4;
+$font5: nice-loking-5;
 
-.paragraph--type--links {
-  height: 600px;
-  //background-position-y: -278px;
+@font-face {
+  font-family: $font;
+  src: url('/themes/studioluz/assets/fonts/nice-looking.woff2') format('woff2')
+}
+@font-face {
+  font-family: $font2;
+  src: url('/themes/studioluz/assets/fonts/nice-looking-2.woff2') format('woff2')
+}
+@font-face {
+  font-family: $font3;
+  src: url('/themes/studioluz/assets/fonts/nice-looking-3.woff2') format('woff2')
+}
+@font-face {
+  font-family: $font4;
+  src: url('/themes/studioluz/assets/fonts/nice-looking-4.woff2') format('woff2')
+}
+@font-face {
+  font-family: $font5;
+  src: url('/themes/studioluz/assets/fonts/nice-looking-5.woff2') format('woff2')
+}
 
-  .field--name-field-link a,
-  .field--name-field-title {
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    color: $white;
+html, body {
+  font-family: $font3;
+  font-weight: 600;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  //-moz-osx-font-smoothing: antialiased;
+  font-smooth: always;
+
+  a {
+    &:hover {
+      text-decoration: none;
+      opacity: 0.6;
+    }
   }
-
-  .field--name-field-title {
-    top: 400px;
-    font-size: 90px;
-  }
-
-  .field--name-field-link {
-    & a {
-      font-size: 22px;
-      top: 550px;
-      padding: 8px 38px;
-      border: 2px $white solid;
-      border-radius: 6px;
-      &:hover {
-        text-decoration: none;
-        opacity: 0.5;
-      }
+  ul.tabs {
+    position: fixed;
+    top: 50%;
+    z-index: 9999;
+    left: -1px;
+    border: 1px solid black;
+    li {
+      display: block;
+      margin-right: 0;
     }
   }
 }
