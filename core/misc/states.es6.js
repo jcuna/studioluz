@@ -591,7 +591,7 @@
 
   /**
    * Global state change handlers. These are bound to "document" to cover all
-   * elements whose state changes. Events sent to elements within the page
+   * elements whose state changes. Emitter sent to elements within the page
    * bubble up to these handlers. We use this system so that themes and modules
    * can override these state change handlers for particular parts of a page.
    */

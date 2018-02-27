@@ -30,6 +30,9 @@ const config = {
             }
         ]
     },
+    watchOptions: {
+      poll: true
+    },
     plugins: [
         new webpack.ProvidePlugin({
             React: 'react'

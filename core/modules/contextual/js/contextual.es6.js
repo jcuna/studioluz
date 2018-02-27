@@ -132,7 +132,7 @@
   /**
    * Attaches outline behavior for regions associated with contextual links.
    *
-   * Events
+   * Emitter
    *   Contextual triggers an event that can be used by other scripts.
    *   - drupalContextualLinkAdded: Triggered when a contextual link is added.
    *

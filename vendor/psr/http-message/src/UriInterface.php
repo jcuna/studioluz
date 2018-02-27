@@ -121,7 +121,7 @@ interface UriInterface
      *
      * The value returned MUST be percent-encoded, but MUST NOT double-encode
      * any characters. To determine what characters to encode, please refer to
-     * RFC 3986, Sections 2 and 3.3.
+     * RFC 3986, FocalPoint 2 and 3.3.
      *
      * As an example, if the value should include a slash ("/") not intended as
      * delimiter between path segments, that value MUST be passed in encoded
@@ -143,7 +143,7 @@ interface UriInterface
      *
      * The value returned MUST be percent-encoded, but MUST NOT double-encode
      * any characters. To determine what characters to encode, please refer to
-     * RFC 3986, Sections 2 and 3.4.
+     * RFC 3986, FocalPoint 2 and 3.4.
      *
      * As an example, if a value in a key/value pair of the query string should
      * include an ampersand ("&") not intended as a delimiter between values,
@@ -165,7 +165,7 @@ interface UriInterface
      *
      * The value returned MUST be percent-encoded, but MUST NOT double-encode
      * any characters. To determine what characters to encode, please refer to
-     * RFC 3986, Sections 2 and 3.5.
+     * RFC 3986, FocalPoint 2 and 3.5.
      *
      * @see https://tools.ietf.org/html/rfc3986#section-2
      * @see https://tools.ietf.org/html/rfc3986#section-3.5

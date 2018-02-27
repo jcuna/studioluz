@@ -206,7 +206,7 @@ class DevelToolbarTest extends BrowserTestBase {
 
     $this->drupalGet('');
     $toolbar_tray = $this->assertSession()->elementExists('css', $toolbar_tray_selector);
-    $item = $this->assertSession()->elementExists('css', sprintf('ul.toolbar-menu a:contains("%s")', 'Events Info'), $toolbar_tray);
+    $item = $this->assertSession()->elementExists('css', sprintf('ul.toolbar-menu a:contains("%s")', 'Emitter Info'), $toolbar_tray);
     $this->assertFalse($item->hasClass('toolbar-horizontal-item-hidden'));
 
     // Ensures that disabling a menu link it will not more shown in the toolbar
@@ -216,7 +216,7 @@ class DevelToolbarTest extends BrowserTestBase {
 
     $this->drupalGet('');
     $toolbar_tray = $this->assertSession()->elementExists('css', $toolbar_tray_selector);
-    $this->assertSession()->elementNotExists('css', sprintf('ul.toolbar-menu a:contains("%s")', 'Events Info'), $toolbar_tray);
+    $this->assertSession()->elementNotExists('css', sprintf('ul.toolbar-menu a:contains("%s")', 'Emitter Info'), $toolbar_tray);
   }
 
   /**

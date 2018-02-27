@@ -44,10 +44,10 @@ class DevelEventInfoTest extends BrowserTestBase {
     // Ensures that the events info link is present on the devel menu and that
     // it points to the correct page.
     $this->drupalGet('');
-    $this->clickLink('Events Info');
+    $this->clickLink('Emitter Info');
     $this->assertSession()->statusCodeEquals(200);
     $this->assertSession()->addressEquals('/devel/events');
-    $this->assertSession()->pageTextContains('Events');
+    $this->assertSession()->pageTextContains('Emitter');
   }
 
   /**
@@ -58,7 +58,7 @@ class DevelEventInfoTest extends BrowserTestBase {
 
     $this->drupalGet('/devel/events');
     $this->assertSession()->statusCodeEquals(200);
-    $this->assertSession()->pageTextContains('Events');
+    $this->assertSession()->pageTextContains('Emitter');
 
     $page = $this->getSession()->getPage();
 

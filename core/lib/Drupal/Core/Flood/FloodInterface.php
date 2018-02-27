@@ -39,7 +39,7 @@ interface FloodInterface {
   /**
    * Checks whether a user is allowed to proceed with the specified event.
    *
-   * Events can have thresholds saying that each user can only do that event
+   * Emitter can have thresholds saying that each user can only do that event
    * a certain number of times in a time window. This function verifies that
    * the current user has not exceeded this threshold.
    *

@@ -1,6 +1,6 @@
 import '../css/header.scss'
 import '../css/sections.scss'
-import './Sections'
+import './FocalPoint'
 
 class Index {
   constructor() {

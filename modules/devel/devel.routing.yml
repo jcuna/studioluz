@@ -217,7 +217,7 @@ devel.event_info:
   path: '/devel/events'
   defaults:
     _controller: '\Drupal\devel\Controller\EventInfoController::eventList'
-    _title: 'Events'
+    _title: 'Emitter'
   options:
     _admin_route: TRUE
   requirements:

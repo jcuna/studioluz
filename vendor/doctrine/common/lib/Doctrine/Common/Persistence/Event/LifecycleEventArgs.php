@@ -23,7 +23,7 @@ use Doctrine\Common\EventArgs;
 use Doctrine\Common\Persistence\ObjectManager;
 
 /**
- * Lifecycle Events are triggered by the UnitOfWork during lifecycle transitions
+ * Lifecycle Emitter are triggered by the UnitOfWork during lifecycle transitions
  * of entities.
  *
  * @link   www.doctrine-project.org

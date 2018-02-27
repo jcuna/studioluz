@@ -43,7 +43,7 @@
  *
  * - @link plugin_api Plugins @endlink
  * - @link container Services and the Dependency Injection Container @endlink
- * - @link events Events @endlink
+ * - @link events Emitter @endlink
  * - @link i18n Internationalization @endlink
  * - @link cache Caching @endlink
  * - @link utility Utility classes and functions @endlink
@@ -1324,9 +1324,9 @@
  * - Routing: Providing or altering "routes", which are URLs that Drupal
  *   responds to, or altering routing behavior with event listener classes.
  *   See the @link menu Routing and menu topic @endlink for more information.
- * - Events: Modules can register as event subscribers; when an event is
+ * - Emitter: Modules can register as event subscribers; when an event is
  *   dispatched, a method is called on each registered subscriber, allowing each
- *   one to react. See the @link events Events topic @endlink for more
+ *   one to react. See the @link events Emitter topic @endlink for more
  *   information.
  *
  * @section sec_sample *.info.yml files
@@ -2537,12 +2537,12 @@ function hook_validation_constraint_alter(array &$definitions) {
  */
 
 /**
- * @defgroup events Events
+ * @defgroup events Emitter
  * @{
  * Overview of event dispatch and subscribing
  *
  * @section sec_intro Introduction and terminology
- * Events are part of the Symfony framework: they allow for different components
+ * Emitter are part of the Symfony framework: they allow for different components
  * of the system to interact and communicate with each other. Each event has a
  * unique string name. One system component dispatches the event at an
  * appropriate time; many events are dispatched by Drupal core and the Symfony

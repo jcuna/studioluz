@@ -116,7 +116,7 @@
     };
   };
 
-  // Backbone.Events
+  // Backbone.Emitter
   // ---------------
 
   // A module that can be mixed in to *any object* in order to provide it with
@@ -125,7 +125,7 @@
   // succession.
   //
   //     var object = {};
-  //     _.extend(object, Backbone.Events);
+  //     _.extend(object, Backbone.Emitter);
   //     object.on('expand', function(){ alert('expanded'); });
   //     object.trigger('expand');
   //
@@ -1222,7 +1222,7 @@
     },
 
     // Remove this view by taking the element out of the DOM, and removing any
-    // applicable Backbone.Events listeners.
+    // applicable Backbone.Emitter listeners.
     remove: function() {
       this._removeElement();
       this.stopListening();

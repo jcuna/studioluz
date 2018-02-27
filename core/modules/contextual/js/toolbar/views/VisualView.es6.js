@@ -7,7 +7,7 @@
   Drupal.contextualToolbar.VisualView = Backbone.View.extend(/** @lends Drupal.contextualToolbar.VisualView# */{
 
     /**
-     * Events for the Backbone view.
+     * Emitter for the Backbone view.
      *
      * @return {object}
      *   A mapping of events to be used in the view.

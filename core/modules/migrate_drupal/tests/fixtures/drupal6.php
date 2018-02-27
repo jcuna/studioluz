@@ -15257,7 +15257,7 @@ $connection->insert('locales_source')
   'lid' => '695',
   'location' => '/?q=fr/admin/settings/site-information',
   'textgroup' => 'default',
-  'source' => 'Events',
+  'source' => 'Emitter',
   'version' => '6.38-dev',
 ))
 ->values(array(
@@ -16748,7 +16748,7 @@ $connection->insert('locales_source')
   'lid' => '908',
   'location' => '/?q=fr/admin/settings/event/timezone',
   'textgroup' => 'default',
-  'source' => "Events are saved with a time zone value. This setting allows you to determine how the time zone is determined when creating or editing an event. You must have 'Configurable time zones' enabled in the !url before you can enable user's time zones for this feature.",
+  'source' => "Emitter are saved with a time zone value. This setting allows you to determine how the time zone is determined when creating or editing an event. You must have 'Configurable time zones' enabled in the !url before you can enable user's time zones for this feature.",
   'version' => '6.38-dev',
 ))
 ->values(array(
@@ -16769,7 +16769,7 @@ $connection->insert('locales_source')
   'lid' => '911',
   'location' => '/?q=fr/admin/settings/event/timezone',
   'textgroup' => 'default',
-  'source' => "Events are saved with a time zone value. This setting allows you to determine if the event's time zone, the sitewide time zone, or the user's personal time zone setting is used to display the time for an event. You must have 'Configurable time zones' enabled in the !url before you can enable user's time zones for this feature.",
+  'source' => "Emitter are saved with a time zone value. This setting allows you to determine if the event's time zone, the sitewide time zone, or the user's personal time zone setting is used to display the time for an event. You must have 'Configurable time zones' enabled in the !url before you can enable user's time zones for this feature.",
   'version' => '6.38-dev',
 ))
 ->values(array(
@@ -31117,7 +31117,7 @@ $connection->insert('menu_links')
   'plid' => '0',
   'link_path' => 'event',
   'router_path' => 'event',
-  'link_title' => 'Events',
+  'link_title' => 'Emitter',
   'options' => 'a:0:{}',
   'module' => 'system',
   'hidden' => '1',
@@ -31306,7 +31306,7 @@ $connection->insert('menu_links')
   'plid' => '167',
   'link_path' => 'admin/settings/event',
   'router_path' => 'admin/settings/event',
-  'link_title' => 'Events',
+  'link_title' => 'Emitter',
   'options' => 'a:1:{s:10:"attributes";a:1:{s:5:"title";s:36:"Set up how your site handles events.";}}',
   'module' => 'system',
   'hidden' => '0',
@@ -39705,7 +39705,7 @@ $connection->insert('menu_router')
   'number_parts' => '3',
   'tab_parent' => '',
   'tab_root' => 'admin/settings/event',
-  'title' => 'Events',
+  'title' => 'Emitter',
   'title_callback' => 't',
   'title_arguments' => '',
   'type' => '6',
@@ -41421,7 +41421,7 @@ $connection->insert('menu_router')
   'number_parts' => '1',
   'tab_parent' => '',
   'tab_root' => 'event',
-  'title' => 'Events',
+  'title' => 'Emitter',
   'title_callback' => 't',
   'title_arguments' => '',
   'type' => '20',
@@ -44047,7 +44047,7 @@ $connection->insert('node_type')
   'type' => 'event',
   'name' => 'Event',
   'module' => 'node',
-  'description' => 'Events have a start date and an optional end date as well as a teaser and a body. They can be extended by other modules, too.',
+  'description' => 'Emitter have a start date and an optional end date as well as a teaser and a body. They can be extended by other modules, too.',
   'help' => '',
   'has_title' => '1',
   'title_label' => 'Title',

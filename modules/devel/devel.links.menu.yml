@@ -88,6 +88,6 @@ devel.route_info.item:
 
 # Event info
 devel.event_info:
-  title: 'Events Info'
+  title: 'Emitter Info'
   route_name: devel.event_info
   menu_name: devel

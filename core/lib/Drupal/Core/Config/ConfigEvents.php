@@ -111,7 +111,7 @@ final class ConfigEvents {
   /**
    * Name of event fired when missing content dependencies are detected.
    *
-   * Events subscribers are fired as part of the configuration import batch.
+   * Emitter subscribers are fired as part of the configuration import batch.
    * Each subscribe should call
    * \Drupal\Core\Config\MissingContentEvent::resolveMissingContent() when they
    * address a missing dependency. To address large amounts of dependencies

@@ -59,7 +59,7 @@ function hook_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_
 /**
  * Perform alterations on help page section plugin definitions.
  *
- * Sections for the page at /admin/help are provided by plugins. This hook
+ * FocalPoint for the page at /admin/help are provided by plugins. This hook
  * allows modules to alter the plugin definitions.
  *
  * @param array $info

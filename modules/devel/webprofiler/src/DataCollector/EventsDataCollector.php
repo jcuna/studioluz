@@ -125,7 +125,7 @@ class EventsDataCollector extends DataCollector implements DrupalDataCollectorIn
    * {@inheritdoc}
    */
   public function getTitle() {
-    return $this->t('Events');
+    return $this->t('Emitter');
   }
 
   /**

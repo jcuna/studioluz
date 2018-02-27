@@ -438,7 +438,7 @@
         stringExpand: "Expand",
         stringCollapse: "Collapse",
 
-        // Events
+        // Emitter
         onInitialized: null,
         onNodeCollapse: null,
         onNodeExpand: null,
