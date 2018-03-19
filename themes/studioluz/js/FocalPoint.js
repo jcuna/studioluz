@@ -1,42 +1,54 @@
 
-import emitter from './Emitter';
 import {getIconElement} from "./utilities";
 
-class FocalPoint {
-  static applyFocalPoint() {
+export default class FocalPoint {
+
+  constructor(linkTop, headerSize) {
+    this.linkTop = linkTop;
+    this.headerSize = headerSize;
+    this.haveArrows = [];
+    this.IPE = document.querySelector("#panels-ipe-tray");
+  }
+
+  applyFocalPoint() {
     const h = Math.max(document.documentElement.clientHeight, window.innerHeight || 1600);
     const groupLinks = document.querySelectorAll('.group-link');
     groupLinks.forEach((parent, i) => {
       let desiredHeight = h;
       if (i === 0) {
-        desiredHeight = desiredHeight - FocalPoint.headerSize;
+        desiredHeight = desiredHeight - this.headerSize;
         let grantParentSibling = parent.parentElement.previousElementSibling;
-        let shortBackground = grantParentSibling.querySelector('.short-background');
-        if (grantParentSibling !== null && shortBackground !== null) {
-          desiredHeight = desiredHeight - shortBackground.clientHeight;
+        if (grantParentSibling !== null) {
+          let shortBackground = grantParentSibling.querySelector('.short-background');
+          if (shortBackground !== null) {
+            desiredHeight = desiredHeight - shortBackground.clientHeight;
+          }
         }
       }
       if (desiredHeight < 500) {
         desiredHeight = 500;
       }
 
-      FocalPoint.centerImgs(parent, desiredHeight);
-      FocalPoint.centerText(parent, desiredHeight);
+      this.centerImgs(parent, desiredHeight);
+      this.centerText(parent, desiredHeight);
       if (i !== groupLinks.length -1) {
-        FocalPoint.addArrowLink(parent, h);
+        this.addArrowLink(parent, h, i);
       }
     });
   }
 
-  static addArrowLink(node, desiredHeights) {
+  addArrowLink(node, desiredHeights, index) {
+    if (this.haveArrows[index]) {
+      return;
+    }
+    this.haveArrows[index] = true;
     const el = document.createElement('div');
     el.classList.add('scroll-anchor');
     el.classList.add('push-hover');
     el.innerHTML = getIconElement('caret-down-large-icon', 'scroll-arrow');
-    console.log(node.nextElementSibling)
     el.addEventListener('click', e => {
       window.scrollBy({
-        top: desiredHeights, // could be negative value
+        top: desiredHeights,
         left: 0,
         behavior: 'smooth'
       });
@@ -44,22 +56,81 @@ class FocalPoint {
     node.appendChild(el);
   }
 
-  static centerText(parent, desiredHeight) {
+  centerText(parent, desiredHeight) {
     let title = parent.querySelector('.link-title');
     let link = parent.querySelector('.luz-link a');
     title.style.top = `${desiredHeight * 0.4}px`;
-    link.style.top = `${desiredHeight * 0.4 + FocalPoint.linkTop}px`;
+    link.style.top = `${desiredHeight * 0.4 + this.linkTop}px`;
   }
 
-  static centerImgs(parent, desiredHeight) {
+  centerImgs(parent, desiredHeight) {
     let img = parent.querySelector('.group-link-image img');
-    parent.style.height = `${desiredHeight}px`;
-    let top = (desiredHeight - img.getAttribute('height'))/2;
-    let left = (parent.clientWidth - img.getAttribute('width'))/2;
-    img.setAttribute('style', `top: ${top}px; left: ${left}px; position: relative;`);
+    let center = parent.querySelector('.field--name-field-background-focus');
+    if (center) {
+      let [x, y] = center.innerText.split(':');
+      parent.style.height = `${desiredHeight}px`;
+      let top = ((desiredHeight - img.getAttribute('height')) / 2) + Number(y);
+      let left = ((parent.clientWidth - img.getAttribute('width')) / 2) + Number(x);
+      img.setAttribute('style', `top: ${top}px; left: ${left}px; position: relative;`);
+
+    }
   }
 
-  static findParentSibling(mainClass, siblingClass, callback) {
+  addFocalSelector() {
+    let hid = false;
+
+    let mutationObserver = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        if (mutation.target.classList.contains('ipe-form') && !hid) {
+          let f = mutation.target.querySelector('.form-item-field-link-0-subform-field-background-focus-0-value');
+          f.style.display = 'none';
+          f.parentElement.insertBefore(this.selectorNode, f);
+          hid = true;
+        }
+      });
+    });
+
+    mutationObserver.observe(this.IPE, {
+      // attributes: true,
+      // characterData: true,
+      childList: true,
+      subtree: true,
+      // attributeOldValue: true,
+      // characterDataOldValue: true
+    });
+  }
+
+  get selectorNode() {
+    const selector = document.createElement('div');
+    selector.classList.add('focus-selector');
+    selector.addEventListener('click', e => {
+      const img = document.querySelector('.image-preview img');
+      img.style.cursor = 'crosshair';
+      img.addEventListener('click', function (e) {
+        const input = document.querySelector('.form-item-field-link-0-subform-field-background-focus-0-value input');
+        let x = e.pageX - img.offsetLeft - img.getAttribute('width');
+        let y = e.pageY - img.offsetTop - img.getAttribute('height');
+        input.value = `${Math.round(x/2)}:${Math.round(y/2)}`;
+        img.style.cursor = 'initial';
+        img.removeEventListener('click', this);
+      });
+    });
+    return selector;
+  }
+
+  keepBinding(el, button) {
+    const self = this;
+    el.addEventListener('click', function (e) {
+      el.removeEventListener('click', this);
+      self.addFocalSelector();
+      switch(button.getAttribute('data-tab-id')) {
+        case 'manage_content':
+
+      }
+    });
+  }
+
+  findParentSibling(mainClass, siblingClass, callback) {
     document.querySelectorAll(mainClass).forEach(node => {
       let parent = node.parentElement;
       let nodes = Array.from(parent.children);
@@ -70,9 +141,3 @@ class FocalPoint {
     });
   }
 }
-
-FocalPoint.linkTop = 80;
-FocalPoint.headerSize = 122;
-
-FocalPoint.applyFocalPoint();
-emitter.bind(['resize', 'orientationChange'], FocalPoint.applyFocalPoint);

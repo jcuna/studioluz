@@ -16,7 +16,7 @@
   .luz-link {
     & a {
       font-size: 20px;
-      padding: 6px 40px;
+      padding: 10px 44px;
       border: 2px #ffffff solid;
       border-radius: 4px;
       text-transform: uppercase;
@@ -84,4 +84,21 @@ h1 {
 
 .short-background {
   height: auto;
+}
+
+
+.focus-selector {
+  cursor: pointer;
+  width: 30px;
+  &:after {
+    font-family: Font Awesome\ 5 Free;
+    content: "\f140";
+    font-size: 30px;
+    color: darkolivegreen;
+  }
+}
+
+
+.filter-wrapper, .entity-content-form-revision-information, .details-wrapper {
+  display: none;
 }
