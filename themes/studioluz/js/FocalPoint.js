@@ -69,8 +69,8 @@ export default class FocalPoint {
     if (center) {
       let [x, y] = center.innerText.split(':');
       parent.style.height = `${desiredHeight}px`;
-      let top = ((desiredHeight - img.getAttribute('height')) / 2) + Number(y);
-      let left = ((parent.clientWidth - img.getAttribute('width')) / 2) + Number(x);
+      let top = ((desiredHeight - img.getAttribute('height')) / 2);
+      let left = ((parent.clientWidth - img.getAttribute('width')) / 2);
       img.setAttribute('style', `top: ${top}px; left: ${left}px; position: relative;`);
 
     }
